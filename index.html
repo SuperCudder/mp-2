@@ -1,13 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mp-2</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Jonah Kastelic | CountryGuesser</title>
+    <link rel="stylesheet" type="text/css" href="src/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/mapillary-js@4.1.2/dist/mapillary.js"></script>
+    <link
+            href="https://unpkg.com/mapillary-js@4.1.2/dist/mapillary.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<header>
+    <h1>Country Guesser</h1>
+    <p>Minigame for travelers</p>
+</header>
+<div class="idxMain">
+    <main>
+        <h1>Welcome</h1>
+
+        <p> Yes, this is just like GeoGuessr, and yes I am a fan, I made this for fun. </p>
+    </main>
+</div>
+
+<div id="root"></div>
+<script type="module" src="src/main.tsx"></script>
+<div id="button-section">
+    <button onclick="countryChoice('')">country</button>
+    <button onclick="countryChoice('')">country</button>
+    <button onclick="countryChoice('')">country</button>
+    <button onclick="countryChoice('')">country</button>
+</div>
+
+<div id="score-box">
+    <h3 id="score">Correct: - Incorrect: </h3>
+</div>
+
+<footer>
+    <p><a href="credits.html">Credits</a> &#169; 2025 Jonah Kastelic. All rights reserved. </p>
+</footer>
+</body>
 </html>

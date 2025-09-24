@@ -3,14 +3,17 @@ import {Viewer} from "mapillary-js";
 /*This TSX file is based off of this code: https://mapillary.github.io/mapillary-js/docs/intro/try/*/
 const token = import.meta.env.VITE_MAPILLARY_TOKEN as string;
 
-interface props {
+interface props { /*component prop interface*/
     imageId: string;
 }
 
 const MapView = ({ imageId }: props) => {
+    /*ref for dom container for mounting mapillary view*/
     const containerRef = useRef<HTMLDivElement | null>(null);
+    /*holds mapillary viewer instance*/
     const viewerRef = useRef<Viewer | null>(null);
     useEffect(() => {
+        /*check if container isnt ready or img is missing*/
         if (!containerRef.current || !imageId) return;
 
         if (viewerRef.current) { /* if viewer already init, remove*/
@@ -18,18 +21,18 @@ const MapView = ({ imageId }: props) => {
             viewerRef.current = null;
         }
 
-        viewerRef.current = new Viewer({
+        viewerRef.current = new Viewer({ /*init new viewer*/
             accessToken: token,
             container: containerRef.current,
             imageId: imageId,
         });
 
-        return () => {
+        return () => { /*clean up at unmount or before rerun */
             if (viewerRef.current) {
                 viewerRef.current.remove();
             }
         };
-    }, [imageId]);
+    }, [imageId]); /*dependancy arr for component mounts*/
 
     return (
         <div

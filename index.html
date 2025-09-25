@@ -6,39 +6,42 @@
     <link rel="stylesheet" type="text/css" href="src/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://unpkg.com/mapillary-js@4.1.2/dist/mapillary.js"></script>
-    <link
-            href="https://unpkg.com/mapillary-js@4.1.2/dist/mapillary.css"
-            rel="stylesheet"
-    />
+    <link href="https://unpkg.com/mapillary-js@4.1.2/dist/mapillary.css" rel="stylesheet"/>
 </head>
 <body>
 <header>
     <h1>Country Guesser</h1>
     <p>Minigame for travelers</p>
 </header>
-<div class="idxMain">
+
+<div id="idxMain" class="idxMain">
     <main>
-        <h1>Welcome</h1>
-
-        <p> Yes, this is just like GeoGuessr, and yes I am a fan, I made this for fun. </p>
+        <h2>Welcome</h2>
+        <p>This is a small scale React based mini-project challenging users to identify countres given a 360-degree
+            panoramic street view image. Built using TypeScript and the Mapillary API, this game calls random goelocated
+            photos from around the world and presents users with multiple choice questions. Utilizing caching for smooth
+            gameplay, real time score tracking and a detailed viewer experience. Also featuring custom event handling
+            for component communication, and efficient API data management.</p>
     </main>
-</div>
 
-<div id="root"></div>
-<script type="module" src="src/main.tsx"></script>
-<div id="button-section">
-    <button onclick="countryChoice('')">country</button>
-    <button onclick="countryChoice('')">country</button>
-    <button onclick="countryChoice('')">country</button>
-    <button onclick="countryChoice('')">country</button>
-</div>
+    <div id="root" class="root"></div>
 
-<div id="score-box">
-    <h3 id="score">Correct: - Incorrect: </h3>
+    <div id="buttons" class="buttons">
+        <button>Loading...</button>
+        <button>Loading...</button>
+        <button>Loading...</button>
+        <button>Loading...</button>
+    </div>
+
+    <div id="scorebox" class="scorebox">
+        <h3 id="score">Correct: 0 | Incorrect: 0</h3>
+    </div>
 </div>
 
 <footer>
-    <p><a href="credits.html">Credits</a> &#169; 2025 Jonah Kastelic. All rights reserved. </p>
+    <p><a href="credits.html">Credits</a> &#169; 2025 Jonah Kastelic. All rights reserved.</p>
 </footer>
+
+<script type="module" src="src/main.tsx"></script>
 </body>
 </html>

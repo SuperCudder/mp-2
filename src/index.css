@@ -5,5 +5,121 @@
 }
 
 body {
-    font-family: sans-serif;
+    margin: 0 5%;
+    background-color: #FAF3E0;
+    font-family: Domine, Arial, Helvetica, sans-serif; /*google font*/
+    line-height: 1.6;
+}
+
+.idxMain {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.idxMain h2 {
+    text-align: center;
+}
+
+.idxMain p {
+    text-align: center;
+    line-height: 1.6;
+    margin-left: 14vw;
+    margin-right: 14vw;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.buttons button {
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: #FF7D00;
+    color: #FAF3E0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 150px;
+}
+
+.buttons button:hover {
+    background-color: #1A1A1A;
+}
+
+.scorebox {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #FAF3E0;
+    border-radius: 8px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1A1A1A;
+    color: #FAF3E0;
+}
+
+header h1 {
+    font-size: calc(24px + 1vw);
+    margin-bottom: 10px;
+    color: #FF7D00;
+}
+
+header p {
+    font-size: calc(14px + 1vw);
+    color: #FF7D00;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1A1A1A;
+    color: #FAF3E0;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #FF7D00;
+}
+
+.App {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.App h3 {
+    text-align: center;
+}
+
+nav {
+    width: 100%; /*new width for horizontal mode*/
+    max-width: 100%;
+    order: 0; /*keep nav under header but above everything else while horizontal*/
+}
+
+nav ul { /*horizontal nav on smaller screen*/
+    list-style-type:none;
+    text-decoration:none;
+}
+
+nav li {
+    margin: 0;
+    background-color: #FF7D00;
+}
+
+nav a {
+    color: #1A1A1A;
+    text-align: center;
+    padding: 10px 5px;
+    font-size: calc(10px + 0.3vw);
 }

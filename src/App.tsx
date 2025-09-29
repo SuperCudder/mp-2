@@ -1,6 +1,6 @@
-import MapView from "./MapView.tsx";
+import MapView from "./components/MapView.tsx";
 import {useEffect, useState} from "react";
-import {guessGame} from "./game.ts";
+import {guessGame} from "./components/game.ts";
 import styled from "styled-components";
 
 function App() { /*tsx func to load scripts into webapp*/
@@ -26,7 +26,6 @@ function App() { /*tsx func to load scripts into webapp*/
             await guessGame();
             setGameReady(true);
         }
-
         initGame();
     }, []); /*empty arr to make sure this only runs on init*/
 

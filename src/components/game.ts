@@ -49,31 +49,29 @@ export function countryChoice(selectedCode: string) {
         return;
     }
 
-    if (selectedCode === currentCorrect) { /*if user selection is correct increment correct*/
+    const answerBox = document.getElementById("answer");
+    const isCorrect = selectedCode === currentCorrect;
+    if (isCorrect) { /*if user selection is correct increment correct*/
         numCorrect++;
+        if (answerBox) { /*need a simple way to give some feedback if the correct or incorrect answer was chosen*/
+            answerBox.textContent = `You chose the correct country!`;
+            answerBox.style.color = "#2D5016";
+        }
     } else {
         numIncorrect++;
+        if (answerBox) {
+            answerBox.textContent = `Incorrect, the correct country is: ${getCountryName(currentCorrect)}!`;
+            answerBox.style.color = "#8B0000";
+        }
     }
+
 
     updateScore(); /*update display*/
     /*put this here to push guessGame() call at the end of the event queue which makes sure browser UI can catch up*/
     setTimeout(() => {
+        if (answerBox) answerBox.textContent = "";
         guessGame();
-    }, 10);
-}
-
-export function initScore() { /*init display*/
-    updateScore();
-}
-
-export function getGameStats() { /*reset if needed*/
-    return {correct: numCorrect, incorrect: numIncorrect};
-}
-
-export function resetGameStats() {
-    numCorrect = 0;
-    numIncorrect = 0;
-    updateScore();
+    }, 500);
 }
 
 /*since this is module based gotta make funcs globally acessible for html to work. To do this i attach functs to global window

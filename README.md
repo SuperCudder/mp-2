@@ -1,3 +1,5 @@
+## Currently depricated due to recent API changes: https://forum.mapillary.com/t/webapp-ai-fetch-issue-looking-for-help/9973/9
+
 # Country Guesser
 
 A React based webapp geography guessing game challenging users to identify countries utilizing a 360 degree panoramic street view image.
